@@ -1,0 +1,67 @@
+
+html, body {
+	margin: 0;
+	padding: 0;
+	
+	font-family: Arial;
+	font-size: 0.85em;
+	
+	width: 800px;
+	height: 600px;
+	
+	background: #fff;
+}
+
+div#svg {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+svg polygon {
+	-webkit-transition: all 0.25s; /* Safari */
+    transition: all 0.25s;
+	
+	stroke-width: 1;
+	stroke: url(#clipImg);
+	fill: url(#clipImg);
+}
+
+svg polygon,
+svg polygon.off {
+	opacity: 0;
+}
+
+svg polygon.on {
+	opacity: 1;
+}
+
+.chrome {
+	position: relative;
+}
+
+.chrome img {
+	display: none;
+}
+
+.chrome svg,
+.chrome img {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.chrome svg polygon {
+	fill: white;
+	stroke: white;
+}
+
+.chrome.v2 svg polygon {
+	fill: white;
+	-webkit-transition: all 1s; /* Safari */
+    transition: all 1s;
+}
+
+.chrome.v2 svg polygon,
+.chrome.v2 svg polygon.off { opacity: 0; }
+.chrome.v2 svg polygon.on { opacity: 0.25; }
